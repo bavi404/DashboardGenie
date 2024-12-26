@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard Genie</title>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link href="https://cloud.typography.com/737368/747986/css/fonts.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/genie-static.css" rel="stylesheet" type='text/css' />
+  <link href="assets/css/dashboard-genie.css" rel="stylesheet" type='text/css' />
+</head>
+
+<body>
+
+  <div class="masthead hero">
+    <div class="container">
+      <header class="navbar">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-target=".genie-navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://dashboardgenie.io" class="navbar-brand" target="_blank">
+            <img src="assets/images/genie-logo.svg" alt="Dashboard Genie Logo" class="genie-logo">
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse genie-navbar-collapse" role="navigation">
+          <ul class="navbar-nav nav main-nav">
+            <li><a href="https://github.com/bavishya/dashboard-genie" target="_blank">Docs</a></li>
+            <li><a href="https://dashboardgenie.io/charts" target="_blank">Charts</a></li>
+            <li><a href="https://dashboardgenie.io/team" target="_blank">Team</a></li>
+            <li><a href="https://dashboardgenie.io/blog" target="_blank">Blog</a></li>
+            <li><a href="https://dashboardgenie.io/community" target="_blank">Community</a></li>
+          </ul>
+          <ul class="navbar-nav nav main-nav align-right">
+            <li><a href="https://dashboardgenie.io/contact" class="btn navbar-btn" target="_blank">Get started today</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <h1>Dashboard Genie</h1>
+      <p class="lead">AI-powered dynamic dashboard templates</p>
+      <a class="btn hero-btn" href="https://github.com/bavishya/dashboard-genie" target="_blank">Source Code on Github</a>
+
+      <iframe src="https://ghbtns.com/github-btn.html?user=bavishya&amp;repo=dashboard-genie&amp;type=watch&amp;count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=bavishya&amp;repo=dashboard-genie&amp;type=fork&amp;count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container grid grid-simple-col-2">
+      <div>
+        <h2><a href="./examples/">Examples</a></h2>
+        <a href="./examples/"><img class="img-responsive img-thumbnail" src="./examples/starter-kit/preview.png"></a>
+      </div>
+      <div>
+        <h2><a href="./layouts/">Layouts</a></h2>
+        <a href="./layouts/"><img class="img-responsive img-thumbnail" src="./layouts/quarter-grid/preview.png"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="love">
+        <p><a href="https://dashboardgenie.io">Dashboard Genie</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/js/genie-analytics.js"></script>
+  <script>
+    function toggleMenu() {
+      const toggleBtn = document.querySelector('.navbar-toggle');
+
+      toggleBtn.addEventListener('click', (e) => {
+        let menu;
+        if (e.currentTarget.dataset.target) {
+          menu = document.querySelector(e.currentTarget.dataset.target);
+        }
+        if (menu) menu.classList.toggle('collapsed');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', toggleMenu);
+  </script>
+</body>
+
+</html>

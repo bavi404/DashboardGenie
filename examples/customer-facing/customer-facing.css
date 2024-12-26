@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h3 {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  font-size: 23px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+}
+
+a {
+  color: #3598db;
+  text-decoration: underline;
+}
+
+.menu-hidden {
+  display: none;
+}
+
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  line-height: 1.5;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nav-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-list>li {
+  position: relative;
+  display: block;
+}
+
+.nav-list>li>a {
+  display: block;
+  padding: 12px 18px;
+}
+
+.nav-list>li>a:hover,
+.nav-list>li>a:focus {
+  text-decoration: none;
+  background-color: #f0f0f0;
+}
+
+.nav-tabs-alt {
+  border-bottom: 2px solid #ccc;
+}
+
+.nav-tabs-alt>li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.nav-tabs-alt>li>a {
+  margin-right: 3px;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+}
+
+.nav-tabs-alt>li>a:hover {
+  border-color: #ddd #ddd #ccc;
+}
+
+.nav-tabs-alt>li.active>a,
+.nav-tabs-alt>li.active>a:hover,
+.nav-tabs-alt>li.active>a:focus {
+  color: #444;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: transparent;
+}
+
+.nav-pills-alt>li {
+  float: left;
+}
+
+.nav-pills-alt>li>a {
+  border-radius: 5px;
+}
+
+.nav-pills-alt>li+li {
+  margin-left: 5px;
+}
+
+.nav-pills-alt>li.active>a,
+.nav-pills-alt>li.active>a:hover,
+.nav-pills-alt>li.active>a:focus {
+  color: #fff;
+  background-color: #3598db;
+}
+
+.nav-stacked-alt>li {
+  float: none;
+}
+
+.nav-stacked-alt>li+li {
+  margin-top: 4px;
+  margin-left: 0;
+}
+
+.layout-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.knob-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .content-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content-grid .data-block {
+    min-width: 0;
+  }
+
+  .knob-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .knob {
+    padding: 10px;
+    flex: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header-banner {
+  background: #328bbf;
+  color: #ffffff;
+  padding: 25px 0;
+}
+
+.header-banner .layout-container {
+  min-height: 130px;
+  display: flex;
+}
+
+.header-banner h1 {
+  margin: 40px 0 8px;
+}
+
+.header-banner p.description {
+  font-size: 17px;
+  margin: 0;
+}
+
+.header-banner .icon-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-banner .icon-section span {
+  margin-left: 0.7rem;
+}
+
+.header-banner .profile-image img {
+  min-width: 110px;
+  max-height: 110px;
+}
+
+.header-banner .user-details {
+  margin-left: 1.5rem;
+}
+
+.page-content {
+  clear: both;
+  padding-top: 20px;
+}
+
+.page-content .nav-pills-alt {
+  margin-top: 7px;
+}
+
+.sidebar-section {
+  border-radius: 35px;
+}
+
+.sidebar-section .sidebar-links {
+  margin-top: 25px;
+}
+
+.sidebar-section .img-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.main-wrapper .content-block {
+  padding: 5px 25px 20px 25px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+.main-wrapper .content-block .main-section {
+  margin-top: 15px;
+}
+
+.knob-label {
+  text-align: center;
+}
+
+.navbar-panel {
+  background: #328bbf;
+  padding: 10px 50px;
+}
+
+.navbar-panel .nav-list>li>a,
+.navbar-panel a.navbar-brand {
+  color: #fcfcfc;
+}
+
+.vertical-tabs .active>a,
+.vertical-tabs .active>a:hover,
+.vertical-tabs .active>a:focus {
+  background-color: #328bbf;
+  border-color: #328bbf;
+}
+
+#chart-01 .chart-container {
+  height: 180px;
+}

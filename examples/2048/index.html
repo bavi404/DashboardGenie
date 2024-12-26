@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>2048 Game</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" 
+    media="(device-width: 320px) and (device-height: 568px)">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png" 
+    media="(device-width: 320px) and (device-height: 480px)">
+
+  <!-- CSS Imports -->
+  <link href="styles/game/main.css" rel="stylesheet">
+  <link href="../../assets/css/keen-dashboards.css" rel="stylesheet">
+
+  <!-- Mobile Optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <svg width="20" height="20" viewBox="76.39 132.243 15.35 22" fill="#777">
+            <use xlink:href="#a"></use>
+          </svg>
+        </a>
+        <a class="navbar-brand" href="./">Keen 2048</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://keen.io">Home</a></li>
+          <li><a href="https://keen.io/team">Team</a></li>
+          <li><a href="https://github.com/keenlabs/dashboards/">Source</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li>
+          <li><a href="http://stackoverflow.com/questions/tagged/keen-io">Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Game Container -->
+  <div class="container-2048">
+    <header class="header-bar">
+      <div class="header-content">
+        <h1 class="main-heading">Keen 2048</h1>
+        <div class="score-wrapper">
+          <div class="score-box">0</div>
+          <div class="best-box">0</div>
+        </div>
+      </div>
+
+      <div class="game-info">
+        <p class="game-intro">Join the numbers and reach the <strong>2048 tile!</strong></p>
+        <button class="restart-button">New Game</button>
+      </div>
+    </header>
+
+    <section class="game-area">
+      <div class="grid-wrapper">
+        <div class="grid-row" repeat="4">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+      <div class="tile-wrapper"></div>
+
+      <div class="game-message">
+        <p></p>
+        <div class="controls">
+          <button class="keep-playing-button">Continue</button>
+          <button class="retry-button">Retry</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="stats-section">
+      <div id="moves-container"></div>
+      <div id="stats-container"></div>
+    </aside>
+
+    <footer class="game-footer">
+      <p>
+        <strong>How to Play:</strong> Use <strong>arrow keys</strong> to move the tiles. Tiles with the same value merge!
+      </p>
+      <hr>
+      <p>
+        <strong>Note:</strong> This is the official 2048 game. Play on mobile at 
+        <a href="http://git.io/2048">git.io/2048</a>.
+      </p>
+      <hr>
+      <p>
+        Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli</a>. Based on 
+        <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a>.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts and Polyfills -->
+  <script src="js/game/bind_polyfill.js"></script>
+  <script src="js/game/classlist_polyfill.js"></script>
+  <script src="js/game/animframe_polyfill.js"></script>
+  <script src="js/game/keyboard_input_manager.js"></script>
+  <script src="js/game/html_actuator.js"></script>
+  <script src="js/game/grid.js"></script>
+  <script src="js/game/tile.js"></script>
+  <script src="js/game/local_storage_manager.js"></script>
+  <script src="js/game/game_manager.js"></script>
+  <script src="js/game/application.js"></script>
+
+  <!-- Analytics -->
+  <script src="../../assets/js/keen-analytics.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.navbar-toggle').addEventListener('click', function () {
+        document.querySelector('.navbar-collapse').classList.toggle('collapsed');
+      });
+    });
+  </script>
+</body>
+
+</html>

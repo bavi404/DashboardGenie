@@ -1,0 +1,86 @@
+// Exponentiation Function
+// Inspired by: https://github.com/Team-Sass/Sassy-math/blob/master/sass/math.scss#L36
+
+@function power-calc($base, $exp) {
+  $result: $base;
+  
+  @if $exp > 1 {
+    @for $i from 2 through $exp {
+      $result: $result * $base; 
+    }
+  }
+
+  @if $exp < 1 {
+    @for $i from 0 through -$exp {
+      $result: $result / $base; 
+    }
+  }
+  
+  @return $result;
+}
+
+@function pow($base, $exp) {
+  @return power-calc($base, $exp);
+}
+
+// CSS Transitions
+@mixin smooth-transition($properties...) {
+  -webkit-transition: $properties;
+  -moz-transition: $properties;
+  transition: $properties;
+}
+
+@mixin transition-prop($properties...) {
+  -webkit-transition-property: $properties;
+  -moz-transition-property: $properties;
+  transition-property: $properties;
+}
+
+// Animations
+@mixin apply-animation($settings...) {
+  -webkit-animation: $settings;
+  -moz-animation: $settings;
+  animation: $settings;
+}
+
+@mixin fill-mode($settings...) {
+  -webkit-animation-fill-mode: $settings;
+  -moz-animation-fill-mode: $settings;
+  animation-fill-mode: $settings;
+}
+
+// Transformations
+@mixin apply-transform($settings...) {
+  -webkit-transform: $settings;
+  -moz-transform: $settings;
+  transform: $settings;
+}
+
+// Keyframe Animations
+@mixin define-keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Responsive Media Query
+@mixin max-width($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Clearfix Utility
+@mixin clearfix-fix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

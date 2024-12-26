@@ -1,0 +1,29 @@
+{
+  "name": "dashboard-genie",
+  "homepage": "https://dashboardgenie.io",
+  "main": "./dist/dashboard-genie.css",
+  "authors": [
+    "Bavishya Sankaranarayanan <bavishya@example.com>",
+    "Taylor Barnett <taylor@keen.io>",
+    "Sean Dokko <dokko1230@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dashboard genie",
+    "dashboards",
+    "dataviz",
+    "visualization",
+    "AI-powered"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "assets/img",
+    "assets/js",
+    "assets/css/genie-static.css"
+  ]
+}
+

@@ -1,0 +1,163 @@
+a,
+a:focus,
+a:hover,
+a:active {
+  color: #009ec3;  /* Slightly darker shade for better contrast */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Gotham Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 10px 0;  /* Reduced margin for compact look */
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 200;
+  letter-spacing: .01em;
+  line-height: 46px;
+}
+
+h2 {
+  color: #24303a;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+h3 {
+  color: #546678;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 28px;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid #eee;
+  border-radius: 3px;  /* Added subtle border-radius */
+}
+
+.keen-logo {
+  height: 36px;
+  margin: 0 12px 0 0;
+  width: 145px;
+}
+
+.navbar-toggle {
+  background-color: rgba(255, 255, 255, .3);  /* Slightly increased opacity */
+}
+
+.navbar-toggle .icon-bar {
+  background: #fafafa;
+}
+
+.navbar-nav {
+  margin: 6px 0 0;
+}
+
+.navbar-nav > li > a {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  padding-top: 18px;
+}
+
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:hover {
+  text-decoration: underline;
+}
+
+.navbar-nav > li > a.navbar-btn {
+  background-color: rgba(255, 255, 255, .3);
+  padding: 10px 14px;
+}
+
+.navbar-nav > li > a.navbar-btn:hover {
+  background-color: rgba(255, 255, 255, .4);
+}
+
+.navbar-collapse {
+  box-shadow: none;
+}
+
+.masthead {
+  background-color: #009ec3;
+  background-image: url("../img/bg-bars.png");
+  background-position: 0 -270px;
+  background-repeat: repeat-x;
+  color: #ffffff;
+  margin: 0 0 22px;
+  padding: 22px 0;
+}
+
+.masthead h1 {
+  margin: 0;
+}
+
+.masthead small,
+.masthead a,
+.masthead a:focus,
+.masthead a:hover {
+  color: #f0f0f0;
+}
+
+.masthead p {
+  color: #c7e7f1;
+  font-weight: 200;
+  letter-spacing: .04em;
+}
+
+.hero {
+  background-position: 50% 95%;
+  min-height: 460px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin: 110px 0 0;
+}
+
+.hero .lead {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hero a.hero-btn {
+  border: 2px solid #fafafa;
+  display: block;
+  font-size: 23px;
+  font-weight: 300;
+  margin: 0 auto 15px;
+  max-width: 310px;
+  padding: 14px 0 7px;
+}
+
+.hero a.hero-btn:hover {
+  background-color: #f0f0f0;
+  color: #009ec3;
+}
+
+.sample-item {
+  margin-bottom: 26px;
+}
+
+.signup {
+  float: left;
+  margin-top: -5px;
+  margin-right: 8px;
+}
+
+.love {
+  border-top: 1px solid #d3d3d3;
+  color: #546678;
+  margin: 22px 0 0;
+  padding: 14px 0;
+  text-align: center;
+}
+
+.love p {
+  margin: 0;
+}

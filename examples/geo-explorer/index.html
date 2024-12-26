@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Starter UI by Bavishya</title>
+
+  <!-- Mapbox and Dependencies -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Keen Analysis & Dataviz -->
+  <script src="https://cdn.jsdelivr.net/npm/keen-analysis@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/keen-dataviz@4/dist/keen-dataviz.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/keen-dataviz@4/dist/keen-dataviz.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="keen-dashboards.css">
+  <link rel="stylesheet" type="text/css" href="geo-explorer.css">
+</head>
+
+<body class="keen-dashboard">
+
+  <div id="app-wrapper">
+    <div id="app-toolbar">
+      <form action="" onsubmit="return false;" method="post">
+        <div class="tools">
+          <div class="tool radius">
+            <h5>Query Radius</h5>
+            <input type="number" id="radius-value" class="form-control" value="">
+            <select class="form-control" id="radius-suffix">
+              <option value="km">km</option>
+              <option value="mi">mi</option>
+            </select>
+          </div>
+          <div class="tool coordinates">
+            <h5>Latitude</h5>
+            <input type="number" step="any" id="coordinates-lat" class="form-control" placeholder="Latitude">
+          </div>
+          <div class="tool coordinates">
+            <h5>Longitude</h5>
+            <input type="number" step="any" id="coordinates-lng" class="form-control" placeholder="Longitude">
+          </div>
+          <div class="tool timeframe">
+            <h5>Start time</h5>
+            <input type="date" id="timeframe-start" class="form-control">
+          </div>
+          <div class="tool timeframe">
+            <h5>End time</h5>
+            <input type="date" id="timeframe-end" class="form-control">
+          </div>
+          <div class="tool">
+            <h5>Bavishya's Mapbox</h5>
+            <button id="refresh" class="btn btn-primary btn-block">Refresh</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="app-maparea"></div>
+
+    <div id="app-sidebar">
+      <div id="chart-01" class="app-sidebar-chart"></div>
+      <div id="chart-02" class="app-sidebar-chart"></div>
+      <div id="chart-03" class="app-sidebar-chart"></div>
+    </div>
+  </div>
+
+  <p class="small text-muted">Built with &#9829; by Bavishya Sankaranarayanan</p>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+      const map = new mapboxgl.Map({
+        container: 'app-maparea',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [DEFAULTS.lng, DEFAULTS.lat],
+        zoom: DEFAULTS.zoom
+      });
+
+      const marker = new mapboxgl.Marker({ draggable: true })
+        .setLngLat([DEFAULTS.lng, DEFAULTS.lat])
+        .addTo(map);
+
+      marker.on('dragend', function () {
+        const lngLat = marker.getLngLat();
+        console.log(`Marker moved to: ${lngLat.lat}, ${lngLat.lng}`);
+      });
+
+      document.getElementById('refresh').addEventListener('click', function () {
+        map.setCenter([DEFAULTS.lng, DEFAULTS.lat]);
+        map.setZoom(DEFAULTS.zoom);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

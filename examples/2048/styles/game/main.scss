@@ -1,0 +1,254 @@
+@import "helpers";
+@import "fonts/clear-sans.css";
+
+// Layout Variables
+$board-width: 500px;
+$spacing: 15px;
+$cells-per-row: 4;
+$tile-dimension: ($board-width - $spacing * ($cells-per-row + 1)) / $cells-per-row;
+$border-radius: 3px;
+
+$mobile-breakpoint: $board-width + 20px;
+
+// Color Variables
+$primary-text: #776E65;
+$highlight-text: #f9f6f2;
+
+$tile-base: #eee4da;
+$tile-highlight: #edc22e;
+$tile-glow: lighten($tile-highlight, 15%);
+
+$background-color: #bbada0;
+
+// Transitions
+$transition-duration: 100ms;
+
+// Overrides
+.navbar-dark {
+  background-color: #3d4a57;
+  border-color: #333;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  background: #4d4d4d;
+  color: $primary-text;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
+
+.header-bar {
+  background-color: #00afd7;
+  padding: 50px;
+  color: white;
+}
+
+.heading-area {
+  @include clearfix;
+}
+
+h1.main-heading {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+@include keyframes(slide-up) {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+.score-area {
+  float: right;
+  text-align: right;
+}
+
+.score-block, .best-block {
+  $block-height: 25px;
+
+  position: relative;
+  display: inline-block;
+  background: $background-color;
+  padding: 15px 25px;
+  font-size: $block-height;
+  height: 60px;
+  line-height: $block-height + 22px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: white;
+  margin-top: 8px;
+  text-align: center;
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: $tile-base;
+  }
+
+  .score-increment {
+    position: absolute;
+    right: 30px;
+    color: rgba($primary-text, .9);
+    font-size: $block-height;
+    line-height: $block-height;
+    font-weight: bold;
+    z-index: 100;
+    @include animation(slide-up 600ms ease-in);
+    @include animation-fill-mode(both);
+  }
+}
+
+.score-block:after {
+  content: "Score";
+}
+
+.best-block:after {
+  content: "Best";
+}
+
+p {
+  margin: 0 0 10px;
+  line-height: 1.65;
+}
+
+a {
+  color: $primary-text;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+// Emphasis
+strong {
+  &.important {
+    text-transform: uppercase;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid lighten($primary-text, 40%);
+  margin: 20px 0 30px;
+}
+
+// Game Container
+.board-container {
+  width: 960px;
+  background-color: white;
+  padding: 0 50px 50px;
+  margin: 50px auto;
+}
+
+.core-container {
+  margin-top: 40px;
+}
+
+// Fade-in Animation
+@include keyframes(fade-visible) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// Button Mixin
+@mixin action-button {
+  display: inline-block;
+  background: darken($background-color, 20%);
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: $highlight-text;
+  height: 40px;
+  line-height: 42px;
+}
+
+// Grid and Tile Layout
+@mixin game-board {
+  .game-area {
+    margin-top: 0;
+    position: relative;
+    padding: $spacing;
+
+    background: $background-color;
+    border-radius: $border-radius * 2;
+    width: $board-width;
+    height: $board-width;
+    box-sizing: border-box;
+
+    .message-popup {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba($tile-base, .5);
+      z-index: 100;
+      text-align: center;
+
+      p {
+        font-size: 60px;
+        font-weight: bold;
+        margin-top: 222px;
+      }
+
+      .action-section {
+        margin-top: 59px;
+      }
+
+      a {
+        @include action-button;
+        margin-left: 9px;
+
+        &.continue-button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .grid-wrapper {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .grid-row {
+    margin-bottom: $spacing;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .grid-cell {
+    width: $tile-dimension;
+    height: $tile-dimension;
+    margin-right: $spacing;
+    float: left;
+    border-radius: $border-radius;
+    background: rgba($tile-base, .35);
+  }
+}
+
+// Apply Game Board Mixin
+@include game-board;

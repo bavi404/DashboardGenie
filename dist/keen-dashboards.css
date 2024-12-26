@@ -1,0 +1,75 @@
+.dashboard-keen {
+  background: #f4f4f4;
+  font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.dataviz-keen {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.dataviz-keen-title {
+  border-bottom: 1px solid #dcdcdc;
+  border-radius: 3px 3px 0 0;
+  font-size: 14px;
+  padding: 4px 12px 2px;
+  text-transform: uppercase;
+}
+
+.dataviz-keen-stage {
+  padding: 12px;
+}
+
+.dataviz-keen-notes {
+  background-color: #f8f8f8;
+  border-radius: 0 0 3px 3px;
+  border-top: 1px solid #dcdcdc;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding: 4px 12px;
+}
+
+.dataviz-keen .dataviz-keen-metric {
+  border-radius: 3px;
+}
+
+.dataviz-keen .spinner-indicator {
+  border-top-color: rgba(0, 180, 210, 0.45);
+}
+
+.dashboard-keen .chart-box {
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.dashboard-keen .chart-box .chart-header {
+  border-bottom: 1px solid #cccccc;
+  color: #5a5a5a;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 8px 12px 5px;
+}
+
+.dashboard-keen .chart-box .chart-content {
+  overflow: hidden;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.dashboard-keen .chart-box .chart-description {
+  background-color: #f6f6f6;
+  border-top: 1px solid #d0d0d0;
+  color: #7a7a7a;
+  font-size: 13px;
+  padding: 10px 12px 8px;
+}
+
+.dashboard-keen .chart-box .dataviz-keen,
+.dashboard-keen .chart-box .dataviz-keen-title,
+.dashboard-keen .chart-content .chart-header {
+  border: none;
+}

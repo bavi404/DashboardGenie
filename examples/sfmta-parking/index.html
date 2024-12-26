@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Data Dashboard by Bavishya</title>
+
+  <!-- Dependencies -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/keen-dataviz@4/dist/keen-dataviz.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/keen-dataviz@4/dist/keen-dataviz.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link href="keen-dashboards.css" rel="stylesheet" type="text/css">
+  <link href="parking-data.css" rel="stylesheet">
+  <style>
+    #mapbox-panel {
+      position: relative;
+    }
+
+    #mapbox-panel .chart-title {
+      border: medium none;
+    }
+
+    #mapbox-panel .chart-stage {
+      height: 600px;
+    }
+
+    #app-maparea {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0px;
+      top: 0;
+      width: 100%;
+    }
+
+    .sfmta-charts .chart {
+      margin-bottom: 1rem;
+    }
+
+    .sfmta-charts .c3-chart {
+      height: 250px;
+    }
+
+    .sfmta-charts .keen-dataviz-rendering {
+      padding: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .sfmta-map {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body class="keen-dashboard">
+
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./">Parking Data</a>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav nav main-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Source</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container grid grid-simple-col-2">
+    <div class="sfmta-charts">
+      <div id="grid-1" class="chart"></div>
+      <div id="grid-2" class="chart"></div>
+      <div id="grid-3" class="chart"></div>
+    </div>
+    <div class="sfmta-map">
+      <div id="mapbox-panel">
+        <div id="app-maparea"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const client = new Keen({
+      projectId: '53f3eca97d8cb91b75000000',
+      readKey: 'df6ff0ff414bc286b91e2661db4c691c45b6aea8d2c8cf2393169e9b9ef36a3d77e59c57b540febc8f328bf1f605782d9035c4a7072dc86c4f96ddbcce7dfe0b088ae51dd2ea36ad022290d1f3580e2d1ea202845ae7f79e7db6634ee627a26197dadf7eb2e5a46b16f04a4cae55955e'
+    });
+
+    Keen.ready(function () {
+      const charts = [
+        { container: '#grid-1', title: 'Parking Occupancy by Area', type: 'area', stacked: true },
+        { container: '#grid-2', title: 'Revenue by Location', type: 'bar', stacked: false },
+        { container: '#grid-3', title: 'Parking Violations Over Time', type: 'line' }
+      ];
+
+      charts.forEach(config => {
+        new KeenDataviz(config)
+          .data({})
+          .render();
+      });
+
+      client.query('count', {
+        event_collection: 'parking_data',
+        timeframe: { start: '2023-01-01', end: '2024-01-01' },
+        interval: 'monthly'
+      }).then(res => {
+        KeenDataviz({ container: '#grid-1' }).data(res).render();
+      });
+
+      // Mapbox Integration
+      mapboxgl.accessToken = 'pk.eyJ1Ijoia2Vlbi1pbyIsImEiOiIza0xnNXBZIn0.PgzKlxBmYkOq6jBGErpqOg';
+      const map = new mapboxgl.Map({
+        container: 'app-maparea',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [DEFAULTS.coordinates.lng, DEFAULTS.coordinates.lat],
+        zoom: DEFAULTS.zoom
+      });
+    });
+  </script>
+
+</body>
+
+</html>

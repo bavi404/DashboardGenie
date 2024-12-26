@@ -1,0 +1,152 @@
+#map-container .chart-header {
+  border: none;
+}
+
+#map-container .chart-body {
+  height: 350px;
+}
+
+#map-view {
+  position: absolute;
+  top: 0;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+
+.chart-holder {
+  min-height: 360px;
+}
+
+.chart-body .dial-title {
+  border-bottom: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+#chart-large {
+  height: 340px;
+}
+
+.btn-set-small > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+/* Custom tabs: vertical and horizontal alignment */
+
+.nav-tab-list {
+  padding: 10px 0 0 10px;
+}
+
+.tab-area {
+  min-width: 0;
+}
+
+.tab-area .tab-section {
+  height: 300px;
+}
+
+.side-tabs > .nav-tab-list,
+.bottom-tabs > .nav-tab-list {
+  border-bottom: none;
+}
+
+.tab-area > .tab-section,
+.pill-area > .pill-section {
+  display: none;
+}
+
+.tab-area > .active,
+.pill-area > .active {
+  display: block;
+}
+
+.bottom-tabs > .nav-tab-list {
+  border-top: 1px solid #ddd;
+}
+
+.bottom-tabs > .nav-tab-list > li {
+  margin-top: -1px;
+}
+
+.bottom-tabs > .nav-tab-list > li > a {
+  border-radius: 0 0 4px 4px;
+}
+
+.bottom-tabs > .nav-tab-list > li > a:hover,
+.bottom-tabs > .nav-tab-list > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.bottom-tabs > .nav-tab-list > .active > a,
+.bottom-tabs > .nav-tab-list > .active > a:hover,
+.bottom-tabs > .nav-tab-list > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.side-tabs-left > .nav-tab-list > li,
+.side-tabs-right > .nav-tab-list > li {
+  float: none;
+}
+
+.side-tabs-left > .nav-tab-list > li > a,
+.side-tabs-right > .nav-tab-list > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.side-tabs-left > .nav-tab-list {
+  float: left;
+  border-right: 1px solid transparent;
+}
+
+@media (min-width: 1200px) {
+  .side-tabs-left > .nav-tab-list {
+    border-right-color: #ddd;
+  }
+}
+
+.side-tabs-left > .nav-tab-list > li > a {
+  margin-right: -1px;
+  color: #428bca;
+  border-radius: 4px 0 0 4px;
+}
+
+.side-tabs-left > .nav-tab-list > li > a:hover,
+.side-tabs-left > .nav-tab-list > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.side-tabs-left > .nav-tab-list .active > a,
+.side-tabs-left > .nav-tab-list .active > a:hover,
+.side-tabs-left > .nav-tab-list .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  border-right-color: #ffffff;
+}
+
+.side-tabs-right > .nav-tab-list {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #ddd;
+}
+
+.side-tabs-right > .nav-tab-list > li > a {
+  margin-left: -1px;
+  border-radius: 0 4px 4px 0;
+}
+
+.side-tabs-right > .nav-tab-list > li > a:hover,
+.side-tabs-right > .nav-tab-list > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.side-tabs-right > .nav-tab-list .active > a,
+.side-tabs-right > .nav-tab-list .active > a:hover,
+.side-tabs-right > .nav-tab-list .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+}
