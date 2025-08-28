@@ -1,7 +1,7 @@
 {
   "name": "dashboard-genie",
   "homepage": "https://dashboardgenie.io",
-  "main": "./dist/dashboard-genie.css",
+  "main": "./assets/css/keen-dashboards.css",
   "authors": [
     "Bavishya Sankaranarayanan <bavishya@example.com>",
     "Taylor Barnett <taylor@keen.io>",
@@ -23,7 +23,7 @@
     "tests",
     "assets/img",
     "assets/js",
-    "assets/css/genie-static.css"
+    "assets/css/keen-static.css"
   ]
 }
 

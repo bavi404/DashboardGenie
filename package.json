@@ -2,7 +2,7 @@
   "name": "dashboard-genie",
   "version": "1.0.0",
   "description": "AI-powered dynamic dashboard templates",
-  "main": "./dist/dashboard-genie.css",
+  "main": "./assets/css/keen-dashboards.css",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bavishya/dashboard-genie.git"
